@@ -108,3 +108,12 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
     - You need an actual list of the population
       - Risks undercoverage
 - Stratified Sampling
+  - More inclusive than simple random sampling (SRS)
+  - Sampling frame is divided into at least 2 groups (strata), then use simple random sampling on each stratum
+    - If studying a student population, strata could be freshmen, sophomores, etc
+    - More helpful than SRS if, for instance, you have a smaller number of freshmen than the other classifications. Using SRS you could, by luck, not include freshmen in your sample
+  - Limitations
+    - Could lead to oversampling a stratum and biasing your sample
+    - Must have an actual list, as with SRS
+    - Gotta figure out how to build your strata
+      - must know if a hospital is urban or rural
