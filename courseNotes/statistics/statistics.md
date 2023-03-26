@@ -45,7 +45,7 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
 
 ### Classifying levels of measurement
 
-A 4 level system
+[A 4 level system](https://github.com/jeremyraby/courseNotes/blob/main/courseNotes/statistics/classifyStatistics.jpg)
 
 #### Quantitative vs Qualitative Data
 
@@ -71,7 +71,7 @@ A 4 level system
       - can't be ordered from smallest to largest
       - names, colors, locations
 
-![How to classify statistics algorithm](~/Documents/development/courseNotes/statistics/classifyStatistics.jpg)
+![How to classify statistics algorithm][def]
 
 ## Sampling
 
@@ -88,3 +88,5 @@ A 4 level system
   - *Random assignment* is when a sample is split into different study groups eg treatment & control groups
   - *Stratified sampling* is when a population consists of 2 or more natural sub-groups and the test sample is made to reflect those groups.
     > Suppose you were interested in views of capital punishment at an urban university. You have the time and resources to interview 200 students. The student body is diverse with respect to age; many older people work during the day and enroll in night courses (average age is 39), while younger students generally enroll in day classes (average age of 19). It is possible that night students have different views about capital punishment than day students. If 70% of the students were day students, it makes sense to ensure that 70% of the sample consisted of day students. Thus, your sample of 200 students would consist of 140 day students and 60 night students. The proportion of day students in the sample and in the population (the entire university) would be the same. Inferences to the entire population of students at the university would therefore be more secure.
+
+[def]: ~/Documents/development/courseNotes/statistics/classifyStatistics.jpg
