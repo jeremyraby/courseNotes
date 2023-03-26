@@ -71,22 +71,40 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
       - can't be ordered from smallest to largest
       - names, colors, locations
 
-![How to classify statistics algorithm][def]
-
 ## Sampling
 
 - A sample is used to draw inferences about the population.
   - Samples are generally more practical to test than entire populations
-  - Samples must be *representative* of the larger population
-    - When samples are *random* we can assume they're representative as long as the sample is large enough
-    - Random sampling ensures that every member of the study population has an *equal chance* at being selected for the sample
 
-> When studying voter preferences, a sample of only men or only senior citizens isn't representative of the whole population. Those samples would be *biased*.
+### Definitions
 
-- Sample size is also important as a random, but small, sample could still be biased.
-- Simple random sampling isn't always the best option, s0 other means of ensuring representative samples have been developed.
-  - *Random assignment* is when a sample is split into different study groups eg treatment & control groups
-  - *Stratified sampling* is when a population consists of 2 or more natural sub-groups and the test sample is made to reflect those groups.
-    > Suppose you were interested in views of capital punishment at an urban university. You have the time and resources to interview 200 students. The student body is diverse with respect to age; many older people work during the day and enroll in night courses (average age is 39), while younger students generally enroll in day classes (average age of 19). It is possible that night students have different views about capital punishment than day students. If 70% of the students were day students, it makes sense to ensure that 70% of the sample consisted of day students. Thus, your sample of 200 students would consist of 140 day students and 60 night students. The proportion of day students in the sample and in the population (the entire university) would be the same. Inferences to the entire population of students at the university would therefore be more secure.
+*Sampling Frame* is the list of individuals actually selected for the sample and could be phyical or theoretical
+*Undercoverage* is when individuals who probably should be in the sample frame aren't for various reasons.
+  
+- If you're studying ER admissions, be sure to include admissions during the day and night
 
-[def]: ~/Documents/development/courseNotes/statistics/classifyStatistics.jpg
+*Simulation* is a "numerical facsimilie or representation of a real-world phenomenon
+
+### Types of Samples
+
+- Simple Random Sampling
+  - Every member of the population has an equal opportunity of being in the sample
+  - 2 methods
+    - Method 1
+      1. Assign each individual a unique number (student ID?)
+      2. Put each number in a hat or bingo thing and mix them up
+      3. Draw your sample
+    - Method 2
+      1. Generate your own numerical list that's as long as the list of your population
+        1a. make and number 10 slips of paper
+      1 b. mix up the papers
+      2. Randomly assign your numbers to the population list
+        2a. first student in line gets the first paper pulled from the hat or bingo thing, etc
+      3. Take the first `n` of your population (however many you need for your sample)
+        3a. arrange them in order
+        3b. take your `n`
+    - Method 1 is old-fashioned and probably uses a hat, method 2 is new-school and could use Excel or another software
+  - Limitations
+    - You need an actual list of the population
+      - Risks undercoverage
+- Stratified Sampling
