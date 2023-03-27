@@ -55,3 +55,7 @@ This query will return the following result table:
 | cookie  | 3.50        |
 | cupcake | 4.50        |
 | brownie | 10.50       |
+
+<br>
+
+[Here's a diagram of how this works](https://github.com/jeremyraby/courseNotes/blob/main/sql/groupBy.jpg)
