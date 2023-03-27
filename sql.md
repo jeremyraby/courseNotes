@@ -1,6 +1,6 @@
 # SQL Basics
 
-## Generalized Query
+## Basic Elements of a Query
 
 | Purpose           | Clause   | Example |
 | ---               | ---      | ---     |
