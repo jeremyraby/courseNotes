@@ -89,6 +89,8 @@ Data can also be considered either *discrete* or *continuous*. Discrete data can
 - A sample is used to draw inferences about the population.
   - Samples are generally more practical to test than entire populations
   - to count quantitative sample sizes in Excel, use `=COUNT()` or `=COUNTA()` for qualititative samples
+  - Data from a sample can be just as good as if you had surveyed the population, so long as the sample is *representative*
+    - If you're studying students at a school and only include males ages 18-20, you're leaving out all the females as well as anyone older than 20. Instead, you'd want your sample to have the same percentage of males and females as are in the population, as well as the same percentages of ages/employment statuses/full or part time students, etc.
 
 ### Definitions
 
