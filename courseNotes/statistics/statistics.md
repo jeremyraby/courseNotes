@@ -55,7 +55,6 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
 
 - Quantitative
   - use of numbers to measure something
-  - also called "continuous"
   - can be *interval* or *ratio*
     - interval
       - no true zero
@@ -74,6 +73,8 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
     - *nominal* data do not have any implicit order
       - can't be ordered from smallest to largest
       - names, colors, locations
+
+Data can also be considered either *discrete* or *continuous*. Discrete data can be either qualitative or quantitative and is specifically countable (interval) whereas contious data is always quantitative and measurable instead of countable (ratio).
 
 ## Sampling
 
