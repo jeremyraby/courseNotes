@@ -128,3 +128,11 @@ Data can also be considered either *discrete* or *continuous*. Discrete data can
     - Must have an actual list, as with SRS
     - Gotta figure out how to build your strata
       - must know if a hospital is urban or rural
+
+> For both Simple Random Sampling and Stratified Sampling, Excel can be used to generate pseudo-random numbers.
+
+> `=RAND()` will generate a random decimal number between 0 and 0.999...
+
+> Converting `=RAND()` to an interval can be done with the `=INT()` function: `=INT(RAND())`
+
+> To simulate flipping a coin, with 1 being heads and 0 tails, use `=INT(RAND()*2)` {"heads" or "tails" can be added like this `=CHOOSE(INT(RAND()*2),"head","tail")`}
