@@ -59,9 +59,14 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
     - interval
       - no true zero
         - time of admit (to a hospital) *can't* be 0
+      - Median
+      - Min or Max values
+      - Range
     - ratio
       - has a true zero
         - you can have a systolic BP of 0 (you'd be dead, but it's possible)
+      - Mean
+      - Standard deviation
 - Qualitative
   - use of descriptions or characteristics
   - also called "categorical"
