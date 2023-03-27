@@ -31,7 +31,7 @@ SQL queries have an order of operations similar to algebraic equations. The orde
 
 SQL's GROUP BY clause works in a similar way. Let's say you have a big table of data with different items and their prices, and you want to know how much money you've made from selling each type of item. You can use the GROUP BY clause to group all the items with the same name together, and then SQL will show you the total price for each group.
 
-In general, you can use any column or combination of columns in a GROUP BY clause as long as the values in that column or combination of columns uniquely identify each group you want to create. However, you should be careful not to include columns that don't contribute to the uniqueness of the group.
+In general, you can use any column or combination of columns in a GROUP BY clause as long as the values in that column or combination of columns uniquely identify each group you want to create. However, you should be careful not to include columns that don't contribute to the uniqueness of the group. Just be sure to include the grouping column in the `SELECT` clause.
 
 Using the following table `sales`:
 
@@ -57,3 +57,12 @@ This query will return the following result table:
 | brownie | 10.50       |
 
 [Here's a diagram of how this works](https://github.com/jeremyraby/courseNotes/blob/main/sql/groupBy.jpg)
+
+## WHERE vs HAVING
+
+`WHERE` & `HAVING` clauses both filter data, but differ in the specific data they filter. 
+
+| WHERE | HAVING |
+| ---   | ---    |
+| rows | groups of rows |
+|         | aggregate functions  (SUM, COUNT, AVG) |
