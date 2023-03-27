@@ -66,3 +66,9 @@ This query will return the following result table:
 | ---   | ---    |
 | rows | groups of rows |
 |         | aggregate functions  (SUM, COUNT, AVG) |
+
+## Selecting records in the middle of a dataset
+
+This can be weird, but ChatGPT explains that this is useful for displaying only a certain number of records per page, like when you're shopping online and the web app only displays 10 items per page (called "pagination"). You use the `OFFSET` clause (usually in conjunction with `LIMIT`) to display records 10 - 20 on page 2:
+
+`SELECT * FROM items ORDER BY name LIMIT 10 OFFSET 10;`
