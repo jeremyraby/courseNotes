@@ -47,6 +47,8 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
 
 [A 4 level system](https://github.com/jeremyraby/courseNotes/blob/main/courseNotes/statistics/classifyStatistics.jpg)
 
+[Another model for classifying statistics](https://github.com/jeremyraby/courseNotes/blob/main/courseNotes/statistics/classifyStatistics2.jpg)
+
 #### Quantitative vs Qualitative Data
 
 - Quantitative
