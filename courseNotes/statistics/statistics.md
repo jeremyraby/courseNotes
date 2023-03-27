@@ -75,6 +75,7 @@ Samples are used to infer, or imply, conclusions about samples in *inferential* 
 
 - A sample is used to draw inferences about the population.
   - Samples are generally more practical to test than entire populations
+  - to count quantitative sample sizes in Excel, use `=COUNT()` `=COUNTA()` for qualititative samples
 
 ### Definitions
 
