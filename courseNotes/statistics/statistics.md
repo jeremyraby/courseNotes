@@ -1,6 +1,8 @@
 # Statistics
 
 [Freecodecamp Statistics Course](https://www.youtube.com/watch?v=xxpc-HPKN28&t=2024s)
+[Introduction to Statistics Using Google Sheets](http://www.comfsm.fm/~dleeling/statistics/text6.html)
+[Learn Statistics (with Google Sheets)on Udacity](https://learn.udacity.com/courses/st095)
 
 ## What is Statistics?
 
