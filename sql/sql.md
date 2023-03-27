@@ -72,3 +72,9 @@ This query will return the following result table:
 This can be weird, but ChatGPT explains that this is useful for displaying only a certain number of records per page, like when you're shopping online and the web app only displays 10 items per page (called "pagination"). You use the `OFFSET` clause (usually in conjunction with `LIMIT`) to display records 10 - 20 on page 2:
 
 `SELECT * FROM items ORDER BY name LIMIT 10 OFFSET 10;`
+
+## Database Normalization
+
+Database normalization is like organizing a messy room - you want to group similar items together and make sure you don't have duplicates. In a database, this means breaking up data into smaller tables that are related to each other. This reduces data redundancy and makes it easier to maintain data consistency. By following normalization rules, you can ensure that data is stored in the most efficient and logical way possible. This makes it easier to query and analyze data, which ultimately leads to better decision-making. A trade-off is that data get stored on multiple tables that may need to be `JOIN`ed in order to see all relevant data about that entity.
+
+## Joining tables
