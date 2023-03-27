@@ -24,3 +24,34 @@ SQL queries have an order of operations similar to algebraic equations. The orde
 5. HAVING
 6. SELECT
 7. ORDER BY
+
+## The GROUP BY clause
+
+`GROUP BY` allows you to put multiple rows of data with the same column name into the same "group". The result table will have a column for the "groups" and at least one other column containg data about those groups (like how many are in the group). Imagine you have a big box of different colored candies - some are red, some are blue, and some are green. If you want to know how many of each color there are, you could group them together by color, right?
+
+SQL's GROUP BY clause works in a similar way. Let's say you have a big table of data with different items and their prices, and you want to know how much money you've made from selling each type of item. You can use the GROUP BY clause to group all the items with the same name together, and then SQL will show you the total price for each group.
+
+<br>
+
+Using the following table `sales`:
+
+| item | price |
+| ---  | ---   |
+| cookie | 1.00 |
+| cookie | 1.00 |
+| cookie | 1.50 |
+| cupcake | 2.50 |
+| cupcake | 3.00 |
+| brownie | 3.00 |
+| brownie | 3.50 |
+| brownie | 4.00 |
+
+This query will return the following result table:
+
+`SELECT item, SUM(price) as total_price FROM Table GROUP BY item;`
+
+| item    | total_price |
+| ---     | ---         |
+| cookie  | 3.50        |
+| cupcake | 4.50        |
+| brownie | 10.50       |
