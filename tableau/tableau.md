@@ -44,6 +44,8 @@
 
 *Worksheet*: The worksheet is a collection of sheets. It's a place where you build views of your data by dragging various fields onto the shelves.
 
+[Menu descriptions can be found here](https://www.javatpoint.com/tableau-desktop-workspace)
+
 ## Worksheet Interface
 
 On the data pane (far left), non-numerical data columns are found under the **dimensions** field and numerical data columns are under the **measures** field.
