@@ -46,6 +46,10 @@
 
 [Menu descriptions can be found here](https://www.javatpoint.com/tableau-desktop-workspace)
 
+[Annotated desktop menus](https://github.com/jeremyraby/courseNotes/blob/main/tableau/desktopFeatures1.jpg)
+
+[Annotated desktop view](https://github.com/jeremyraby/courseNotes/blob/main/tableau/desktopFeatures2.jpg)
+
 ## Worksheet Interface
 
 On the data pane (far left), non-numerical data columns are found under the **dimensions** field and numerical data columns are under the **measures** field.
