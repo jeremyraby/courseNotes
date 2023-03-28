@@ -60,6 +60,11 @@ Blue highlighted data columns are discrete data and green are continuous.
 
 The analytics tab of the data pane allows you to cool stuff like add trendlines to scatterplots.
 
+## Joining Tables
+
+After selecting the data source, the tables (worksheets, if using an Excel file) will appear in the left pane. Drag them to the center ("Drag files here") and Tableau will automatically make connections between the tables (they share common columns). [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTables.jpg)
+
+
 ## Making Dashboards
 
 Tableau automatically creates a date hierarchy for any date field. When you drag the date "pill" to the Columns shelf, `YEAR` is defaulted, but clicked the `boxed +` symbol in the left of the pill, you can get smaller time periods (like quarter, etc).
