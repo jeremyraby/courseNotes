@@ -62,7 +62,14 @@ The analytics tab of the data pane allows you to cool stuff like add trendlines 
 
 ## Joining Tables
 
+### Same Field Names
+
 After selecting the data source, the tables (worksheets, if using an Excel file) will appear in the left pane. Drag them to the center ("Drag files here") and Tableau will automatically make connections between the tables (they share common columns). [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTables.jpg)
+
+### Different Field Names
+
+If the tables have differing column names, Tableau will show a dashed line between the tables with a red yield sign. You can edit the connection in the lower left relationships pane to set the shared columns from the tables equal to each other. [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTablesDiffFields.jpg)
+
 
 
 ## Making Dashboards
