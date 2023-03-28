@@ -60,6 +60,10 @@ Blue highlighted data columns are discrete data and green are continuous.
 
 The analytics tab of the data pane allows you to cool stuff like add trendlines to scatterplots.
 
-## Making Vizes
+## Making Dashboards
 
 Tableau automatically creates a date hierarchy for any date field. When you drag the date "pill" to the Columns shelf, `YEAR` is defaulted, but clicked the `boxed +` symbol in the left of the pill, you can get smaller time periods (like quarter, etc).
+
+You can adjust the size of the viz using the Size dropdown. Play with it until the entire View can be seen without scrollbars.
+
+"Actions" in the Dashboard menu allows you to select a data source (worksheet) to act as a filter for all the graphs you have on the dashboard.
