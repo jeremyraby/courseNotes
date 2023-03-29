@@ -70,7 +70,11 @@ After selecting the data source, the tables (worksheets, if using an Excel file)
 
 If the tables have differing column names, Tableau will show a dashed line between the tables with a red yield sign. You can edit the connection in the lower left relationships pane to set the shared columns from the tables equal to each other. [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTablesDiffFields.jpg)
 
+## Cleaning Data
 
+Tableau can automatically clean up data by checking the Data Interpreter box on the Data Source page.
+
+You can split columns by right-clicking the field name on the Data Source page and following the dialog box prompts. Can be either just "Split" or a "Custom Split".
 
 ## Making Dashboards
 
