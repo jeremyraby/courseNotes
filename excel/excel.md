@@ -24,3 +24,6 @@
   - Helpful for naming a cell which can then be referenced as a constant in a formula
     - Compound interest formula can be done with named cells
       - see [here](/Users/jeremyraby/Documents/development/courseNotes/excel/namedCells.jpg)
+    - There is also a "Name Manager" in the Formulas tab --> Defined Names group where you can update the formula or cell name
+  - Can also name ranges
+  
