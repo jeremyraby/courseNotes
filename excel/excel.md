@@ -11,6 +11,12 @@
 - `Shift + arrow` keys will select multiple individual cells
 - `Cmd + Shift + arrow` will select multiple cells at once
 - `Fn + Ctrl + left arrow` will make A1 the active cell
+- To move the active cell inside a selection
+  - `Ctrl + .` moves it clockwise
+  - `Return` moves it down
+  - `Shift + Return` moves it up
+  - `Tab` moves it right
+  - `Shift + Tab` moves it left
 - Fill series, in the Edit group will allow you to auto fill rows or columns based on some constant interval, eg 10, 20, 30, 40, 50, 60, 70, 80, 90, 100
 - Excel has "lists" of things that are commonly used and will be included in an autofill situation. Monday, Tuesday.../Jan, Feb... are examples. You can make a "Custom list" for serials of commonly used items, like listing the X-Men:
   1. Open the Excel menu in the top left of the window
@@ -26,4 +32,5 @@
       - see [here](/Users/jeremyraby/Documents/development/courseNotes/excel/namedCells.jpg)
     - There is also a "Name Manager" in the Formulas tab --> Defined Names group where you can update the formula or cell name
   - Can also name ranges
-  
+- Macros
+  - By default, when recording macros, the cell that was active during the first step will *always* will be used when that macro is run later. *However* you can select Developer tab --> Use Relative References *before* recording the macro so you can run the macro in whichever cell you wish.
