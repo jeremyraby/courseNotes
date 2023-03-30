@@ -34,3 +34,14 @@
   - Can also name ranges
 - Macros
   - By default, when recording macros, the cell that was active during the first step will *always* will be used when that macro is run later. *However* you can select Developer tab --> Use Relative References *before* recording the macro so you can run the macro in whichever cell you wish.
+
+### Common Errors
+
+|Code | Likely reason(s) |
+| --- | --- |
+| `#DIV/0!` | You're trying to divide by 0 inside a formula |
+| `#NAME?` | Function name or variable name isn't recognized |
+| `#NUM!` | Number error, invalid argument or the number is too big for Excel |
+| `#REF!` | Cell reference not valid - probably has been deleted |
+| `#VALUE!` | Wrong data type used in argument |
+| `####` | Cell is too narrow to display result |
