@@ -141,3 +141,9 @@ Data can also be considered either *discrete* or *continuous*. Discrete data can
 > Converting `=RAND()` to an interval can be done with the `=INT()` function: `=INT(RAND())`
 
 > To simulate flipping a coin, with 1 being heads and 0 tails, use `=INT(RAND()*2)` {"heads" or "tails" can be added like this `=CHOOSE(INT(RAND()*2),"head","tail")`}
+
+## Types of Studies
+
+Observational studies and surveys can only show relationships. Only controlled experiments can show causation.
+
+In experiments, we study & manipulate **independent variables**, measure changes in **dependent variables** and try to control **lurking variables** that could affect the dependent variables.
