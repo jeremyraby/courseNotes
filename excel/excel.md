@@ -23,6 +23,7 @@
   2. Excel --> Preferences --> Formulas and Lists --> Custom Lists
   3. Add in your list. Can be typed in manually or added from a range of cells
 - `Fn + F4`, when in a formula will add `$` for absolute references. Multiple presses will cycle through relative, mixed, and absolute references
+- `Ctrl + ;` will enter current date
 
 ## Helpful stuff (& things)
 
@@ -32,16 +33,70 @@
       - see [here](/Users/jeremyraby/Documents/development/courseNotes/excel/namedCells.jpg)
     - There is also a "Name Manager" in the Formulas tab --> Defined Names group where you can update the formula or cell name
   - Can also name ranges
+- Dynamic Named Ranges
+  - If you just use a "static" named range and refer to it in another formula, the formula won't update if you add data to the bottom of the range.
+    - Use the `=OFFSET()` & `=COUNT()` functions to set up an array that will automatically update as new data are added. [Learn more](https://www.ablebits.com/office-addins-blog/excel-dynamic-named-range/)
 - Macros
   - By default, when recording macros, the cell that was active during the first step will *always* will be used when that macro is run later. *However* you can select Developer tab --> Use Relative References *before* recording the macro so you can run the macro in whichever cell you wish.
+  - Can also make user-defined functions with VBA
+- Finding blanks
+    1. Select range
+    2. Editing group --> Find & Select --> Go To... --> Special --> Blanks {blanks will be selected}
+    - Editing group --> Find & Select --> Go To Special... will do this faster
+    - `Fn + F5` will bring up the Go To... dialog box
+    3. Highlight blanks
+  - Can also use Conditional Formatting to highlight blanks (probably better)
+- `=FILTER()` is probably better than using the Sort & Filter group because it keeps the original data intact and can be updated dynamically if more data are entered
+- Formatting data as a table will allow you to add data and have calculations be updated automatically. Converting data to a table can spare you the headache of creating dynamic named ranges, updating formula references, copying formulas across columns, formatting, filtering and sorting your data. [More info](https://www.ablebits.com/office-addins-blog/excel-table-tutorial/)
+- Pivot Tables
+  - Used for comparing 2+ columns against each other
+  - The column that has more unique values (games played vs teams) should go in the Rows data field & the column that has fewer unique values (teams vs games played) should go in the Columns data field
+  - Columns on which should have calculations performed (average, count, display as a percentage, etc) should go in the Values data field
 
-### Common Errors
+**Common Errors**
 
 |Code | Likely reason(s) |
 | --- | --- |
 | `#DIV/0!` | You're trying to divide by 0 inside a formula |
-| `#NAME?` | Function name or variable name isn't recognized |
+| `#NAME?` | Function name or variable name (like a named cell) isn't recognized |
 | `#NUM!` | Number error, invalid argument or the number is too big for Excel |
 | `#REF!` | Cell reference not valid - probably has been deleted |
 | `#VALUE!` | Wrong data type used in argument |
 | `####` | Cell is too narrow to display result |
+
+## Functions
+
+- To search for a function, click the f(x) button next to the formula bar
+  - There's also the Formulas tab --> Function Library
+- `=COUNTA()` counts non-empty cells, `=COUNT()` only counts cells with numbers
+
+> Dates are stored as serial numbers and will skew aggregate functions (SUM, AVERAGE)
+
+- `=LARGE(array, qualifier)` allows you to find the 1st, 2nd, etc largest values in an array. `=SMALLEST(array, qualifier)` does the opposite
+  - [see here](/Users/jeremyraby/Documents/development/courseNotes/excel/largestFunction.jpg)
+  - be sure to use absolute referencing
+- Use `=RAND()` to randomly sort a list of (*x*)
+  1. List (*x*) in one column
+  2. Copy + paste `=RAND()` into adjacent column
+  3. Select both columns
+  4. Editing group --> Sort & Filter --> Custom Sort... --> Sort by column with random numbers (choose ASC or DESC)
+  5. Can now delete column with random numbers and you have a randomly sorted list
+- `=RANDARRAY()` will create an X * Y array with random numbers filled in that can either be decimal or integer
+- `=CHOOSE()` will reference an array and choose which value to display in the cell
+- For splitting text with `=LEFT()` & `=RIGHT()`
+  - `=LEFT({variable},FIND("{delimiter}",{variable})-1)`
+  - `=RIGHT({variable},LEN({variable})-FIND("{delimiter}",{variable}))`
+- For financial functions (PMT, FV, PV)
+  - Income from a financial institution is always `+` while payments made to financial institutions are always `-`.
+    - Dividends, loans, interest = `+`
+    - Loan payments, deposits = `-`
+      - will return in red text written in parantheses (150.25)
+- Array formula
+  - `={COLUMNS;ROWS}` --> `={1,2,3;4,5,6}` -->
+  
+  | 1 | 2 | 3 |
+  | --- | --- | --- |
+  | 4 | 5 | 6 |
+  - [Arrays (or vectors {single column array}) can be multiplied by each other and these formulas can replace tons of others](https://www.ablebits.com/office-addins-blog/array-formulas-functions-excel/)
+- `=IFS()` can chain if statements in one function
+- `=SUMIFS()` & `=COUNTIFS()` will aggregate based on multiple conditions
