@@ -8,9 +8,13 @@
 
 *Bin*: Bin is a user-defined group of measures in the data source.
 
+*Blue field*: Discrete, countable, indivisible data. People, integers, countries. Generally adds a header to the view. 1 header per field.
+
 *Bookmark*: A .tbm document in the bookmarks folder in the Tableau repository that contains a single worksheet. It helps in improving data analysis. Unlike, web browser bookmarks, .tbm files are a compatible way to display various studies quickly.
 
 *Calculated field*: Calculated field is a new field that the user creates derived files by using a formula to modify the existing fields in your data source. It is used to make your work simple and easy.
+
+*Column shelf*: Column shelf is on the top of the workbook. It is used to create the Columns of a data table. The Column shelf provides any numbers of measures and dimensions. When you placed a dimension on the Columns shelf, then Tableau creates headers for the members of that dimension. And when you place a measure on the Columns shelf, Tableau creates quantitative axes for that particular measure.
 
 *Crosstab*: Crosstab is used for a text table view. It uses various text tables to display the numbers associated with dimension members.
 
@@ -20,7 +24,7 @@
 
 *Data Source Page*: Data Source is a page where you can set up your data source. This data source page generally consists of four main areas ? join area, left pane, a preview area, and metadata area.
 
-*Dimension*: Dimension is commonly known as a field of categorical data. Dimensions hold discrete data such as members and hierarchies that cannot be aggregated. It also contains characteristic values such as dates, names, and geographical data. The dimensions used to reveal details of your information.
+*Dimension*: Qualitative data.
 
 *Extract*: An extract is a saved subset of a data source which is used to improve performance and study offline. The users can create an extract by defining limits and filters that contain the data which you want in the extract.
 
@@ -28,11 +32,15 @@
 
 *Format Pane*: The Format pane is on the left side of the workbook, and it contains various formatting settings. It controls the entire view of the worksheet, as well as the individual fields in the view.
 
+*Green field*: Continuous, measurable, divisible data. Heights, weights, lengths. Generally adds an axis to the view. 1 axis per field. Placing 1 green field each on the row and column shelf results in a scatterplot with only 1 data point (the sum of the two fields) - break it down by adding blue fields to the marks shelf.
+
 *Level of Detail expression (LOD)*: The level of detail Expression is a syntax that supports the combination of various dimensions other than the view level. With the help of detail expressions, one can attach multiple dimensions with an aggregate expression.
 
 *Marks*: Marks is a part of the view that visually represents one or more rows in a data source. It can be a line, square, or bar. You can control and alter the size, type, and color of marks.
 
-*Marks Card*: Marks card is on the left side of the worksheet. The user can drag fields to the control mark properties such as color, type, shape, size, label, detail, and tooltip.
+*Marks Card*: Marks card is on the left side of the worksheet. The user can drag fields to the control mark properties such as color, type, shape, size, label, detail, and tooltip. Refers to how data are displayed in a viz. Data are displayed as "marks."
+
+*Measure*: Quantitative data.
 
 *Pages Shelf*: Page shelf is on the left side of the view. With the help of the page shelf, you can split a view into a sequence of pages based on the values and members in a continuous or discrete field. Adding a field with the pages shelf is similar to adding a field in rows shelf. For each new row, a new page is created.
 
@@ -78,8 +86,45 @@ You can split columns by right-clicking the field name on the Data Source page a
 
 ## Making Dashboards
 
+The quickest way to populate fields into a view is to double-click the data field. The graph that is automatically generated in the view depends on which field you select first, eg for geographical data, selecting the geo data first will generate a map view, while selecting numerical data **before** the geo data may generate a bar chart instead.
+- Can also `CMD+click` on two different data fields and the Show Me tool will highlight which chart types can be built with those data
+  - The chart type highlighted with a red border is what Tableau recommends as being most relevant
+- Row shelf = Y axis and Column shelf = X axis
+
 Tableau automatically creates a date hierarchy for any date field. When you drag the date "pill" to the Columns shelf, `YEAR` is defaulted, but clicked the `boxed +` symbol in the left of the pill, you can get smaller time periods (like quarter, etc).
 
-You can adjust the size of the viz using the Size dropdown. Play with it until the entire View can be seen without scrollbars.
+You can adjust the size of the viz using the Size dropdown. Play with it until the entire View can be seen without scrollbars. "Automatic" is a great 'automatic' setting unless you just know how large of a screen will be used to view your viz.
 
-"Actions" in the Dashboard menu allows you to select a data source (worksheet) to act as a filter for all the graphs you have on the dashboard.
+"Actions" in the Dashboard menu allows you to select a data source (worksheet) to act as a filter for all the graphs you have on the dashboard. Several properties can be edited.
+- Name
+- Target Sheets (which worksheet/data source will be filtered)
+- Can add different actions, not just a filter
+  - highlight
+  - go to url
+  - go to sheet
+  - change parameter
+  - change set values
+
+Special filters, not seen as 'actions,' can also be set using the dropdown on the top right corner of each view
+
+## Data Storytelling
+
+> Expect an underlying story when data show something unexpected, unpleasant, complex, costly, or especially counterintuitive. These situations tend to point to a good data story waiting to be told.
+
+1. Set up
+- Start with a hook
+  - Is there a sudden change?
+  - Are we missing an opportunity?
+  - What should we expect going forward?
+- Establish the theme of the story
+2. Build up
+- explain investigation steps
+- communicate intermediate findings
+- describe analysis
+- provide the key finding
+  - greatest explanatory power
+3. Climax
+- Explain the root cause for the hook from the key finding
+4. Conclusion
+- Discuss cause (if known)
+- Call to Action
