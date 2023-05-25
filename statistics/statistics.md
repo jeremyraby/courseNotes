@@ -5,7 +5,8 @@ Use the following sources/courses:
 [Freecodecamp Statistics Course](https://www.youtube.com/watch?v=xxpc-HPKN28&t=2024s)<br>
 [Introduction to Statistics Using Google Sheets](http://www.comfsm.fm/~dleeling/statistics/text6.html)<br>
 [Learn Statistics (with Google Sheets) on Udacity](https://learn.udacity.com/courses/st095)<br>
-[Statistics Crash Course](https://www.youtube.com/watch?v=zouPoc49xbk&list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr)
+[Statistics Crash Course](https://www.youtube.com/watch?v=zouPoc49xbk&list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr)<br>
+[Statistics by Jim](statisticsbyjim.com)
 
 ## What is Statistics?
 
@@ -147,3 +148,208 @@ Data can also be considered either *discrete* or *continuous*. Discrete data can
 Observational studies and surveys can only show relationships. Only controlled experiments can show causation.
 
 In experiments, we study & manipulate **independent variables**, measure changes in **dependent variables** and try to control **lurking variables** that could affect the dependent variables.
+
+
+## Central Tendency
+
+3 measurements
+- Mean (average)
+  - (sum of dataset) / (count of all records in the dataset)
+  - `=AVERAGE()`
+  - Exaggerated by abnormally small or large values
+  - *Use to describe how much money each customer spent at a store over a period of time*
+- Median (middle)
+  - Half the records are smaller than the median and half are larger
+  - Order the records from smallest to highest
+    - Find the record in the middle
+    - For even numbered datasets, avergage the 2 numbers in the middle
+  - `=MEDIAN()`
+  - When outliers are present, median is more accurate of the dataset's center
+  - *Use to how much money the typical customer spent at a store during a period of time*
+- Mode (most common)
+  - Nice to know, but not useful for making decisions
+  - Order the records from smallest to highest
+    - Find the most common record
+  - `=MOD.SNGL()` for a range
+  - `=MOD.MULT()` for an array
+    - "bimodal" because there are 2 modes for the dataset
+  - *Use to describe which was the most popular product at a store during a period of time*
+
+## Variability
+
+How close or spread away the data points are to/from the center
+- Low variability = clustered around the center
+  - "consistent"
+- High variablility = spread out away from the center
+  - "inconsistent"
+  - extreme values become more likely
+    - "out of spec"
+- [Helps us grasp the likelihood of unusual events](https://statisticsbyjim.com/basics/variability-range-interquartile-variance-standard-deviation/)
+
+- Range
+  - (largest data point) - (smallest data point)
+  - Most useful for 
+    - describing data *without* extreme values
+      - Outliers will exaggerate the range and cause it to be misleading
+    - smaller data sets
+      - Larger data sets will probably have a larger range
+        - Differing sample sizes aren't comparable
+
+- Interquartile Range (IQR)
+  - Middle *half* of the data
+  - Not influenced by outliers
+    - used for skewed distributions
+      - As with medians
+  - To find:
+    1. List data in numeric order
+    2. Find the 3 values that "cut" the data into quarters
+        - If the value is a decimal, average 2 adjacent values
+        - Q2 = median
+    3. IQR = (Q3 - Q1)
+
+- Variance
+  - Average squared difference between each data point and the mean
+  - Multistep formula
+    - Use software to run these calculations
+    - "N" & "N-1" are commonly used in the formula if calculating for population or sample, respectively
+      - "N" = the population size
+      - "N-1" = the sample size
+        - accounts for the sample to underestimate population variance
+    1. Calculate the mean for the dataset
+    2. Subtract the mean from each datapoint and keep the absolute value
+    3. Square each difference ie (|datapoint - mean|)^2
+    4. Calculate the mean of the now squared values
+        - N-1 for samples
+
+- Standard deviation
+  - Typical difference between each data point and the mean
+  - Reported in the same units as the dataset, making interpretation convenient
+    - Easier to interpret than variance because it's not reported as a squared value
+  - Multistep formula
+    - Use software to run these calculations
+    - Square root of the variance
+    1. Calculate the mean for the dataset
+    2. Subtract the mean from each datapoint and keep the absolute value
+    3. Square each difference ie (|datapoint - mean|)^2
+    4. Calculate the mean of the now squared values
+        - N-1 for samples
+    5. Calculate the square root of the new mean
+        - What value, squared, equals the mean?
+  - `=STDEV.S()` for samples
+  - `=STDEV.P()` for populations
+  - z-score
+    - Used to describe individual datapoints within a dataset and their relationship to the mean
+    - A datapoint's distance from the mean in standard deviations
+    - (datapoint - mean) / standard deviation
+      - positive or negative
+        - larger/higher/above than the mean
+        - smaller/lower/below than the mean
+      - smaller z-scores are more similar to the mean than larger z-scores
+
+**Which measure of central tendency and variability should I use?**
+
+- If it's a small dataset with no outliers, use mean and range
+- If the data are normally distributed, use mean and standard deviation
+- If the data are skewed, use median and IQR or another percentile measurement
+
+### The Empirical Rule
+
+For normally distributed datasets (bell curve), most datapoints will fall within 3 standard deviations of the mean
+- 68% within 1 sd
+- 95% within 2 sd
+- 99.7% within 3 sd
+
+#### Outliers
+
+- Surprisingly no hard and fast definition of an outlier
+  - Could be any datapoint more than 2 sd from the mean or just an unexpected value (big stock drops in a single day)
+  - Can be identified with IQR
+    - lower "fence" = (Q1 - (1.5 * IQR))
+    - upper "fence" = (Q3 + (1.5 * IQR))
+    - Anything below/above these "fences" is a potential outlier
+
+- Will affect the mean
+  - Left (extra small value) or right (extra large value) skewed when graphed as a histogram
+    - Makes the median the more useful stat in this instance
+
+- Typically 3 causes
+  - Data entry
+    - Dirty data
+      - Can be cleaned
+        - Corrected
+        - Imputed with the mean or median?
+    - If part of a study you're doing, try to redo the measurement to get accurate data
+  - Sample problems/unusual conditions
+    - Individual doesn't actually meet inclusion criteria
+  - Natural variation
+    - Not a problem
+      - Law of large numbers says some extremes will occur
+      - Study it! It could be instructive.
+      - In a normal distribution 1 / 340 observations (0.0029%) will be at least 3 sd away from the mean
+      - Although rare, even small datasets can have extreme values
+
+> Remove the datapoint if it either can't be corrected or doesn't meet inclusion criteria
+
+> Do not remove a datapoint to produce a more desirable result (better fitting model or statistical significance)
+
+- [When encountering outliers, ask 4 questions](https://statisticsbyjim.com/basics/remove-outliers/):
+  - Is it really an outlier?
+  - How'd it happen?
+    - Power outage during a production process?
+    - Diabetic patient in a study of a "healthy" population?
+    - Dirty data?
+  - What can we learn from it?
+    - Run analyses both with and without the outlier and make comparisons
+      - Possibly include in final reporting
+  - Should we change something to take advantage of what we've learned from the outlier?
+
+> Document the shit out of your process and reasoning for removing or imputing datapoints
+
+## Percent Comparisons
+
+### Percent Change
+
+- Use when comparing an *old* value to a *new* value
+- (((new - old) / |old|) * 100)
+- Positive value = increase
+- Negative value = decrease
+
+### Percent Error
+
+- Use when comparing an *approximate* value to an *exact* value
+- (((|approx - exact|) / |exact|) * 100)
+- Report absolute value unless you want to know over/under the exact value
+
+### Percent Difference
+
+- Use when both values are equally important; one is not obviously older or better
+- (|(first value - second value) / ((first + second) / 2)| * 100)
+- Report absolute value
+
+### Percentage Points
+
+**Not the same as %change, %error, or %difference**
+
+Literally the diffrence between percentage values
+
+Avoid reporting confusion
+- An increase/decrease in B percentage points != an increase/decrease of B%
+  - A change of 2 percentage points from 10% to 12% is an increase of 20% (12 / 10 = 1.2 = 120% = increase of 20%)
+    - % is a ratio of two values, in this case a percentage change
+- When in doubt, report both: "Interest rates increased by 2 percentage points today, meaning a 20% increase in interest payments"
+
+### Per capita (rate) Comparisons
+
+- Allows an apples to apples comparison between samples/populations
+  - better than comparing raw numbers
+- Technically, per capita = each individual, but other rates may be used eg "per 100k"
+- Take your statistic number and divide by `n` then multiply by 100k
+  - 50 murders in City A of 800,000 people
+    -  ((50 / 800,000) * 100,000) = 6.25 murders *per 100k people*
+  - 50 murders in City B of 600,000 people
+    - ((50 / 600,000) * 100,000) = 8.33 murders *per 100k people*
+  - City B has a higher muder rate
+
+## Probablility
+
+Study of chance and how likely an event is to occur

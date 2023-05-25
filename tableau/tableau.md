@@ -9,6 +9,8 @@
 *Bin*: Bin is a user-defined group of measures in the data source.
 
 *Blue field*: Discrete, countable, indivisible data. People, integers, countries. Generally adds a header to the view. 1 header per field.
+- Some data could be either blue or green (discrete or continuous) depending on context.
+  - Right click to select Dimension, Attribute, Measure
 
 *Bookmark*: A .tbm document in the bookmarks folder in the Tableau repository that contains a single worksheet. It helps in improving data analysis. Unlike, web browser bookmarks, .tbm files are a compatible way to display various studies quickly.
 
@@ -33,6 +35,10 @@
 *Format Pane*: The Format pane is on the left side of the workbook, and it contains various formatting settings. It controls the entire view of the worksheet, as well as the individual fields in the view.
 
 *Green field*: Continuous, measurable, divisible data. Heights, weights, lengths. Generally adds an axis to the view. 1 axis per field. Placing 1 green field each on the row and column shelf results in a scatterplot with only 1 data point (the sum of the two fields) - break it down by adding blue fields to the marks shelf.
+- Tableau *must* aggregate continuous data *before* it will be visualized
+  - May be required to determine *how* you want it aggregated before it will populate in the View
+- Some data could be either blue or green (discrete or continuous) depending on context.
+  - Right click to select Dimension, Attribute, Measure
 
 *Level of Detail expression (LOD)*: The level of detail Expression is a syntax that supports the combination of various dimensions other than the view level. With the help of detail expressions, one can attach multiple dimensions with an aggregate expression.
 
@@ -58,33 +64,42 @@
 
 [Annotated desktop view](https://github.com/jeremyraby/courseNotes/blob/main/tableau/desktopFeatures2.jpg)
 
-## Worksheet Interface
+## Connecting to Data
 
-On the data pane (far left), non-numerical data columns are found under the **dimensions** field and numerical data columns are under the **measures** field.
+Can connect to Excel, text (CSV, TSV), PDF, JSON files and even local databases
 
-- You can drag and drop measures to dimensions and vice-versa.
+For PDFs
+- Must have a good table structure
+- Follow the dialog box prompts
+  - Can search all pages, a single page, or a range of pages
+- Can make a cohesive table from a table that spans multiple pages
+- Not foolproof, but pretty good
+  - and cool as shit!
 
-Blue highlighted data columns are discrete data and green are continuous.
-
-The analytics tab of the data pane allows you to cool stuff like add trendlines to scatterplots.
-
-## Joining Tables
-
-### Same Field Names
-
-After selecting the data source, the tables (worksheets, if using an Excel file) will appear in the left pane. Drag them to the center ("Drag files here") and Tableau will automatically make connections between the tables (they share common columns). [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTables.jpg)
-
-### Different Field Names
-
-If the tables have differing column names, Tableau will show a dashed line between the tables with a red yield sign. You can edit the connection in the lower left relationships pane to set the shared columns from the tables equal to each other. [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTablesDiffFields.jpg)
-
-## Cleaning Data
+### Cleaning Data
 
 Tableau can automatically clean up data by checking the Data Interpreter box on the Data Source page.
 
 You can split columns by right-clicking the field name on the Data Source page and following the dialog box prompts. Can be either just "Split" or a "Custom Split".
 
-## Making Dashboards
+### Joining Tables
+
+#### Same Field Names
+
+After selecting the data source, the tables (worksheets, if using an Excel file) will appear in the left pane. Drag them to the center ("Drag files here") and Tableau will automatically make connections between the tables (they share common columns). [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTables.jpg)
+
+#### Different Field Names
+
+If the tables have differing column names, Tableau will show a dashed line between the tables with a red yield sign. You can edit the connection in the lower left relationships pane to set the shared columns from the tables equal to each other. [Here's a pic](https://github.com/jeremyraby/courseNotes/blob/main/tableau/joiningTablesDiffFields.jpg)
+
+## Worksheet Interface
+
+On the data pane (far left), non-numerical data columns are found under the **dimensions** field and numerical data columns are under the **measures** field.
+- You can drag and drop measures to dimensions and vice-versa.
+Blue highlighted data columns are discrete data and green are continuous.
+The analytics tab of the data pane allows you to do cool stuff like add trendlines to scatterplots.
+
+### Making Dashboards
 
 The quickest way to populate fields into a view is to double-click the data field. The graph that is automatically generated in the view depends on which field you select first, eg for geographical data, selecting the geo data first will generate a map view, while selecting numerical data **before** the geo data may generate a bar chart instead.
 - Can also `CMD+click` on two different data fields and the Show Me tool will highlight which chart types can be built with those data
@@ -104,10 +119,38 @@ You can adjust the size of the viz using the Size dropdown. Play with it until t
   - go to sheet
   - change parameter
   - change set values
+- Special filters, not seen as 'actions,' can also be set using the dropdown on the top right corner of each view
 
-Special filters, not seen as 'actions,' can also be set using the dropdown on the top right corner of each view
+#### Blue vs Green
 
-## Data Storytelling
+**So much** stuff in Tableau is affected by whether the field you're using is discrete (blue) or continuous (green) data.
+*Blue*/discrete data will generate headers & *green*/continuous data will generate X/Y axes depending on if they're placed on the Columns (X) or Rows (Y) shelves.
+
+##### Color
+
+Tableau has a max of 20 distinct colors, any more data will use recycled colors
+- This will look really messy
+- Stick to like 5 distinct colors max
+
+Tableau colors will behave differently for discrete and continuous data
+- Discrete data will have different colors for each category
+- Continuous data will display as a range of colors eg darker colors for higher profits
+
+##### Filters
+
+Continuous data can be filtered on multiple ranges while discrete data has more limited filtering
+- Sliders vs unordered lists
+
+##### Dates
+
+By default, Tableau will aggregate dates to the highest level available
+- Right click to see smaller aggregations (month, etc)
+- Click the `+` at the left of the pill to add smaller aggregations to the shelf/View
+  - Will add what kind of resembles Sparklines to the view
+- Can change discrete to continuous by right clicking and scrolling to the second section of date options
+  - Creates a "normal looking" timeline
+
+### Data Storytelling
 
 > Expect an underlying story when data show something unexpected, unpleasant, complex, costly, or especially counterintuitive. These situations tend to point to a good data story waiting to be told.
 
